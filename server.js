@@ -6,7 +6,7 @@ const setupFilters = require(`./utils/setupFilters`)
 const setupRoutes = require(`./utils/setupRoutes`)
 const app = express()
 
-app.use(bodyParser.urlencoded({ extended: true }))
+app.use(bodyParser.urlencoded({ extended: true, limit: "10mb" }))
 app.use(bodyParser.json({ limit: "10mb" }))
 app.use(express.static('static'))
 
