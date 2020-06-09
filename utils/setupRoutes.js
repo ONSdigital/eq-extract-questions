@@ -39,6 +39,13 @@ module.exports = (app) => {
     renderPage("output.html")
   )
 
+  app.post('/runner-table',
+    setUrl,
+    fetchSchema,
+    processRunnerQuestionnaire,
+    renderPage("output-table.html")
+  )
+
   app.get('/author-json',
     parseQuestionnaire,
     processAuthorQuestionnaire,
@@ -57,6 +64,13 @@ module.exports = (app) => {
     fetchSchema,
     processAuthorQuestionnaire,
     renderPage("output.html")
+  )
+
+  app.post('/author-table',
+    setUrl,
+    fetchSchema,
+    processAuthorQuestionnaire,
+    renderPage("output-table.html")
   )
 
   app.post("/download",

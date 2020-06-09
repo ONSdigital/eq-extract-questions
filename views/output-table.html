@@ -9,6 +9,7 @@
     <div class="grid">
         <div class="grid__col col-12@m">
             <div class="btn-group">
+                <button class="btn btn-group__btn btn--small" type="submit" form="results-form">Download csv</button>
                 <a href="/"><button class="btn btn-group__btn btn--small" >New questionnaire</button></a>
             </div>
         </div>
@@ -16,9 +17,8 @@
     <br>
     <div class="grid">
         <div class="grid__col col-12@m">
-            {% include "question-layout.html" %}
+            {% include "question-table.html" %}
         </div>
     </div>
 </div>
 {% endblock %}
-

@@ -1,0 +1,21 @@
+<tr class="table--row">	
+    {% if question.alias %}	
+        <td class="table--cell">	
+        </td>	
+    {% endif %}	
+    <td class="table--cell"></td>	
+    <td class="table--cell">	
+        {% if option.qCode or option.q_code %}	
+            {{ option.qCode }}{{ option.q_code }}	
+        {% endif %}	
+    </td>	
+    <td class="table--cell">	
+        {{ answer.type }}	
+    </td>	
+    <td class="table--cell">	
+        {{ answer.label }}	
+    </td>	
+    <td class="table--cell">	
+        {{ option.label }}	
+    </td>	
+</tr> 
