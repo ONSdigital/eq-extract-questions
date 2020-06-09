@@ -19,6 +19,13 @@ module.exports = (app) => {
     renderPage("output.html")
   )
 
+  app.post('/runner-upload-table',
+    fileUpload(),
+    parseQuestionnaire,
+    processRunnerQuestionnaire,
+    renderPage("output-table.html")
+  )
+
   app.post('/runner-json',
     parseQuestionnaire,
     processRunnerQuestionnaire,
