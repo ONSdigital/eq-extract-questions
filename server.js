@@ -3,12 +3,17 @@ const express = require('express')
 const nunjucks = require('nunjucks')
 const bodyParser = require("body-parser")
 const setupFilters = require(`./utils/setupFilters`)
-const setupRoutes = require(`./utils/setupRoutes`)
+const indexRouter = require(`./routes/index`)
+const authorRouter = require(`./routes/author`)
+const runnerRouter = require(`./routes/runner`)
 const app = express()
 
 app.use(bodyParser.urlencoded({ extended: true, limit: "10mb" }))
 app.use(bodyParser.json({ limit: "10mb" }))
 app.use(express.static('static'))
+app.use('/', indexRouter)
+app.use('/author', authorRouter)
+app.use('/runner', runnerRouter)
 
 const env = nunjucks.configure("views", {
   autoescape: true,
@@ -16,6 +21,5 @@ const env = nunjucks.configure("views", {
 })
 
 setupFilters(env)
-setupRoutes(app)
 
 app.listen(3000, () => console.log('Server started on port 3000'))

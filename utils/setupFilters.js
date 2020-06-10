@@ -1,4 +1,4 @@
-const { parseQuestionText } = require(`./runnerUtils`)
+const { parseQuestionText } = require(`./textUtils`)
 
 module.exports = (env) => {
   env.addFilter('parseQuestionText', parseQuestionText)
