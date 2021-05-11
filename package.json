@@ -18,7 +18,7 @@
     "express-fileupload": "^1.1.7-alpha.1",
     "jest": "^25.4.0",
     "json2csv": "^5.0.0",
-    "lodash": "^4.17.15",
+    "lodash": "^4.17.21",
     "lodash.difference": "^4.5.0",
     "nodemon": "^2.0.3",
     "nunjucks": "^3.2.1",
