@@ -1,5 +1,6 @@
 const { parse, transforms: { unwind } } = require("json2csv")
 const { parseQuestionText } = require("../utils/textUtils")
+const { reject } = require("lodash")
 
 const get_qcode = (row) => {
   if (row.answers.options && row.answers.options.q_code) {
@@ -46,7 +47,8 @@ const fields = [
 const transforms = [unwind({ paths: ["answers", "answers.options"], blankOut: true })]
 
 module.exports = (req, res) => {
-  const data = parse(JSON.parse(req.body.questions), { fields, transforms })
+  const questions = reject(JSON.parse(req.body.questions), { pageType: "CalculatedSummaryPage" })
+  const data = parse(questions, { fields, transforms })
   res.attachment("questions.csv")
 
   const parsedText = data
