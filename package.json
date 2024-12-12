@@ -22,7 +22,7 @@
     "lodash": "^4.17.15",
     "lodash.difference": "^4.5.0",
     "nodemon": "^2.0.3",
-    "nunjucks": "^3.2.1",
+    "nunjucks": "^3.2.4",
     "request": "^2.88.2",
     "request-promise-native": "^1.0.8"
   },
